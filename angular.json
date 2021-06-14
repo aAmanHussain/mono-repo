@@ -1,0 +1,488 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "wk-phoenix-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/wk-phoenix-app",
+      "sourceRoot": "projects/wk-phoenix-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/wk-phoenix-app",
+            "index": "projects/wk-phoenix-app/src/index.html",
+            "main": "projects/wk-phoenix-app/src/main.ts",
+            "polyfills": "projects/wk-phoenix-app/src/polyfills.ts",
+            "tsConfig": "projects/wk-phoenix-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/wk-phoenix-app/src/favicon.ico",
+              "projects/wk-phoenix-app/src/assets"
+            ],
+            "styles": [
+              "projects/wk-phoenix-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/wk-phoenix-app/src/environments/environment.ts",
+                  "with": "projects/wk-phoenix-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "wk-phoenix-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "wk-phoenix-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "wk-phoenix-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/wk-phoenix-app/src/test.ts",
+            "polyfills": "projects/wk-phoenix-app/src/polyfills.ts",
+            "tsConfig": "projects/wk-phoenix-app/tsconfig.spec.json",
+            "karmaConfig": "projects/wk-phoenix-app/karma.conf.js",
+            "assets": [
+              "projects/wk-phoenix-app/src/favicon.ico",
+              "projects/wk-phoenix-app/src/assets"
+            ],
+            "styles": [
+              "projects/wk-phoenix-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/wk-phoenix-app/tsconfig.app.json",
+              "projects/wk-phoenix-app/tsconfig.spec.json",
+              "projects/wk-phoenix-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/wk-phoenix-app/e2e/protractor.conf.js",
+            "devServerTarget": "wk-phoenix-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "wk-phoenix-app:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "wk-skills-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/wk-skills-app",
+      "sourceRoot": "projects/wk-skills-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/wk-skills-app",
+            "index": "projects/wk-skills-app/src/index.html",
+            "main": "projects/wk-skills-app/src/main.ts",
+            "polyfills": "projects/wk-skills-app/src/polyfills.ts",
+            "tsConfig": "projects/wk-skills-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/wk-skills-app/src/favicon.ico",
+              "projects/wk-skills-app/src/assets"
+            ],
+            "styles": [
+              "projects/wk-skills-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/wk-skills-app/src/environments/environment.ts",
+                  "with": "projects/wk-skills-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "wk-skills-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "wk-skills-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "wk-skills-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/wk-skills-app/src/test.ts",
+            "polyfills": "projects/wk-skills-app/src/polyfills.ts",
+            "tsConfig": "projects/wk-skills-app/tsconfig.spec.json",
+            "karmaConfig": "projects/wk-skills-app/karma.conf.js",
+            "assets": [
+              "projects/wk-skills-app/src/favicon.ico",
+              "projects/wk-skills-app/src/assets"
+            ],
+            "styles": [
+              "projects/wk-skills-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/wk-skills-app/tsconfig.app.json",
+              "projects/wk-skills-app/tsconfig.spec.json",
+              "projects/wk-skills-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/wk-skills-app/e2e/protractor.conf.js",
+            "devServerTarget": "wk-skills-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "wk-skills-app:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "wk-vsim-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/wk-vsim-app",
+      "sourceRoot": "projects/wk-vsim-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/wk-vsim-app",
+            "index": "projects/wk-vsim-app/src/index.html",
+            "main": "projects/wk-vsim-app/src/main.ts",
+            "polyfills": "projects/wk-vsim-app/src/polyfills.ts",
+            "tsConfig": "projects/wk-vsim-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/wk-vsim-app/src/favicon.ico",
+              "projects/wk-vsim-app/src/assets"
+            ],
+            "styles": [
+              "projects/wk-vsim-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/wk-vsim-app/src/environments/environment.ts",
+                  "with": "projects/wk-vsim-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "wk-vsim-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "wk-vsim-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "wk-vsim-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/wk-vsim-app/src/test.ts",
+            "polyfills": "projects/wk-vsim-app/src/polyfills.ts",
+            "tsConfig": "projects/wk-vsim-app/tsconfig.spec.json",
+            "karmaConfig": "projects/wk-vsim-app/karma.conf.js",
+            "assets": [
+              "projects/wk-vsim-app/src/favicon.ico",
+              "projects/wk-vsim-app/src/assets"
+            ],
+            "styles": [
+              "projects/wk-vsim-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/wk-vsim-app/tsconfig.app.json",
+              "projects/wk-vsim-app/tsconfig.spec.json",
+              "projects/wk-vsim-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/wk-vsim-app/e2e/protractor.conf.js",
+            "devServerTarget": "wk-vsim-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "wk-vsim-app:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "wk-landing-lib": {
+      "projectType": "library",
+      "root": "projects/wk-landing-lib",
+      "sourceRoot": "projects/wk-landing-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/wk-landing-lib/tsconfig.lib.json",
+            "project": "projects/wk-landing-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/wk-landing-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/wk-landing-lib/src/test.ts",
+            "tsConfig": "projects/wk-landing-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/wk-landing-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/wk-landing-lib/tsconfig.lib.json",
+              "projects/wk-landing-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "wk-classes-lib": {
+      "projectType": "library",
+      "root": "projects/wk-classes-lib",
+      "sourceRoot": "projects/wk-classes-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/wk-classes-lib/tsconfig.lib.json",
+            "project": "projects/wk-classes-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/wk-classes-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/wk-classes-lib/src/test.ts",
+            "tsConfig": "projects/wk-classes-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/wk-classes-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/wk-classes-lib/tsconfig.lib.json",
+              "projects/wk-classes-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "wk-assignment-lib": {
+      "projectType": "library",
+      "root": "projects/wk-assignment-lib",
+      "sourceRoot": "projects/wk-assignment-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/wk-assignment-lib/tsconfig.lib.json",
+            "project": "projects/wk-assignment-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/wk-assignment-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/wk-assignment-lib/src/test.ts",
+            "tsConfig": "projects/wk-assignment-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/wk-assignment-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/wk-assignment-lib/tsconfig.lib.json",
+              "projects/wk-assignment-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "wk-phoenix-app"
+}

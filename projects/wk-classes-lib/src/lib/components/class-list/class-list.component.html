@@ -1,0 +1,5 @@
+<div class="class-list-wrapper">
+    <div class="list-item" *ngFor="let class of classList">
+        <lib-class-list-item [class]="class" (classSelected)="classSelectedEmitter.emit($event)"></lib-class-list-item>
+    </div>
+</div>
